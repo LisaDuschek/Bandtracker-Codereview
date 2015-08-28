@@ -1,0 +1,26 @@
+
+.container {
+  margin: 30px;
+  background-color: white;
+  float: center;
+  border-radius: 25px;
+}
+
+h1.header {
+
+  text-align: center;
+
+
+}
+
+h2.add {
+  text-align: center;
+  font-family: 'Chewy', cursive;
+}
+
+div.container{
+
+    text-align: center;
+
+
+}
