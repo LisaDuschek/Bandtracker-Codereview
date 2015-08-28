@@ -3,7 +3,7 @@ Bundler.require(:default)
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-DB = PG.connect({:dbname => "bandtracker_development"})
+# DB = PG.connect({:dbname => "bandtracker_development"})
 
 ################---INDEX---################
 
@@ -14,9 +14,14 @@ end
 
 
 ################---Bands---################
-get('/bands') do
+get("/bands") do
   @bands = Band.all()
   erb(:bands)
+end
+
+get("/bla") do
+  @bands = Band.all()
+  erb(:bla)
 end
 
 post("/bands") do
@@ -45,7 +50,7 @@ end
 
 
 
-################---Venues---################
+# ################---Venues---################
 get('/venues') do
   @venues = Venue.all()
   erb(:venues)
@@ -69,7 +74,7 @@ get("/clear/venues") do
   @venues = Venue.all()
   erb(:venues)
 end
-################---Band---################
+# ################---Band---################
 
 get('/bands/:id') do
   @band = Band.find(params.fetch("id").to_i())
@@ -104,8 +109,8 @@ patch ('/bands/:id/rename') do
 	redirect back
 end
 
-
-################---Venue---################
+#
+# ################---Venue---################
 get('/venues/:id') do
   @venue = Venue.find(params.fetch("id").to_i())
   if @venue.bands

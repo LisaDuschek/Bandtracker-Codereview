@@ -7,10 +7,7 @@
 }
 
 h1.header {
-
-  text-align: center;
-
-
+text-align: center;
 }
 
 h2.add {
@@ -19,8 +16,11 @@ h2.add {
 }
 
 div.container{
+text-align: center;
+  }
 
-    text-align: center;
-
-
+body {
+  background: url('/img/feed-music-photo.jpg') no-repeat center;
+  background-size: cover;
+  text-align:center;
 }
