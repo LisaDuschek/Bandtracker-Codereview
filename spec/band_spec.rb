@@ -6,9 +6,9 @@ describe(Band) do
     expect(band.save()).to(eq(false))
   end
 
-  it("converts the name to uppercase") do
-    band = Band.create({:name => "jimmy hendrix"})
-    expect(band.name()).to(eq("Jimmy Hendrix"))
+  it("capitalizes") do
+    band = Band.create({:name => "jimmy"})
+    expect(band.name()).to(eq("Jimmy"))
   end
 
 

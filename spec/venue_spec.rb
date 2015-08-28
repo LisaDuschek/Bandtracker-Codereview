@@ -6,9 +6,9 @@ describe(Venue) do
     expect(venue.save()).to(eq(false))
   end
 
-  it("converts the venue to uppercase") do
-    venue = Venue.create({:location => "city park"})
-    expect(venue.location()).to(eq("City Park"))
+  it("capitalizes the venue") do
+    venue = Venue.create({:location => "cityhall"})
+    expect(venue.location()).to(eq("Cityhall"))
   end
 
 

@@ -3,7 +3,7 @@ class Venue < ActiveRecord::Base
 
 validates(:location, {:presence => true})
 
-before_save(:upcase_location)
+before_save(:capitalize_location)
 
   scope(:not_done, -> do
     where({:done => false})
@@ -11,8 +11,8 @@ before_save(:upcase_location)
 
 private
 
-  define_method(:upcase_location) do
-    self.location=(location().upcase())
+  define_method(:capitalize_location) do
+    self.location=(location().capitalize!())
   end
 
 

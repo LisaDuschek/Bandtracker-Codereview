@@ -4,7 +4,7 @@ class Band < ActiveRecord::Base
   validates(:name, {:presence => true})
 
 
-  before_save(:upcase_name)
+  before_save(:capitalize_name)
 
     scope(:not_done, -> do
       where({:done => false})
@@ -12,8 +12,8 @@ class Band < ActiveRecord::Base
 
   private
 
-    define_method(:upcase_name) do
-      self.name=(name().upcase())
+    define_method(:capitalize_name) do
+      self.name=(name().capitalize!())
     end
 
 end
